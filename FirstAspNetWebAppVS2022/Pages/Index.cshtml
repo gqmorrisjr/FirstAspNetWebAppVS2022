@@ -2,9 +2,35 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+
+    var myDate = new DateOnly(2021, 11, 9);
+			
+	var today = DateOnly.FromDateTime(DateTime.Now);
+			
+
+	var oneYearFromToday = today.AddYears(1);
+			
+
+	var myTime = new TimeOnly(9, 0);
+			
+
+			var startTime = new TimeOnly(10, 0);
+			var endTime = new TimeOnly(10,30,25);
+
+			var diffTime = endTime - startTime;
+			Console.WriteLine(diffTime);
+			Console.WriteLine(endTime > startTime);
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	@*<p>myDate = @myDate</p>
+	<p>myDate formatted for long date = @myDate.ToLongDateString()</p>
+	<p>today = @today</p>
+	<p>one year from today = @oneYearFromToday</p>
+	<p>myTime = @myTime</p>
+	<p>diffTime = @diffTime</p>
+	<p>boolean expression = @(endTime > startTime)</p>*@
+
 </div>
